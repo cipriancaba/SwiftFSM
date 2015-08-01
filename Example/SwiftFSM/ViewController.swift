@@ -61,7 +61,11 @@ class ViewController: UIViewController {
   }
   
   @IBAction func onCoin(sender: AnyObject) {
-    fsm.transitionWith(.Coin)
+    if let newState = fsm.transitionWith(.Coin) {
+      // state change happened
+    } else {
+      // transition was not valid
+    }
   }
   
   @IBAction func onPush(sender: AnyObject) {
