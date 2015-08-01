@@ -129,6 +129,21 @@ Please note that this will not trigger the initial onEnter callback
 fsm.startFrom(.Locked)
 ```
 
+### Check if a transition was successful
+```swift
+if let newState = fsm.transitionWith(.Coin) {
+  // state change happened
+} else {
+  // transition was not valid
+}
+```
+
+### Current state
+You can access the current state of the fsm at any moment. This will return a `State`
+```swift
+fsm.currentState
+```
+
 
 ## Author
 
