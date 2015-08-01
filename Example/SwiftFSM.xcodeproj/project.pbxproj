@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37CE01971B6D0E7E009E5E81 /* TurnstileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7E7321B6CC7DB00FBD54C /* TurnstileState.swift */; };
+		37CE01981B6D0E80009E5E81 /* TurnstileTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7E7341B6CC7E700FBD54C /* TurnstileTransition.swift */; };
 		37F7E7331B6CC7DB00FBD54C /* TurnstileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7E7321B6CC7DB00FBD54C /* TurnstileState.swift */; };
 		37F7E7351B6CC7E700FBD54C /* TurnstileTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7E7341B6CC7E700FBD54C /* TurnstileTransition.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -385,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				37CE01971B6D0E7E009E5E81 /* TurnstileState.swift in Sources */,
+				37CE01981B6D0E80009E5E81 /* TurnstileTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
