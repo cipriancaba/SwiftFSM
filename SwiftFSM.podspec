@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "SwiftFSM"
-  s.version          = "0.1.0"
-  s.summary          = "A solid yet simple fsm implementation in Swift."
+  s.version          = "0.1.1"
+  s.summary          = "A solid yet simple fsm implementation in Swift"
   s.description      = <<-DESC
                        Finit state machine implementation using Enums, Generics and Closures
                        DESC
