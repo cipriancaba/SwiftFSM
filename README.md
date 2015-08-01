@@ -22,7 +22,7 @@ pod "SwiftFSM"
 
 ## Author
 
-Ciprian Caba, caba.ciprian@hoyoslabs.com
+Ciprian Caba, cipri@cipriancaba.com
 
 ## License
 
