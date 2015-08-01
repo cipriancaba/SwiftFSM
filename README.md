@@ -1,6 +1,6 @@
 # SwiftFSM
 
-[![CI Status](http://img.shields.io/travis/Ciprian Caba/SwiftFSM.svg?style=flat)](https://travis-ci.org/Ciprian Caba/SwiftFSM)
+[![CI Status](http://img.shields.io/travis/cipriancaba/SwiftFSM.svg?style=flat)](https://travis-ci.org/cipriancaba/SwiftFSM)
 [![Version](https://img.shields.io/cocoapods/v/SwiftFSM.svg?style=flat)](http://cocoapods.org/pods/SwiftFSM)
 [![License](https://img.shields.io/cocoapods/l/SwiftFSM.svg?style=flat)](http://cocoapods.org/pods/SwiftFSM)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftFSM.svg?style=flat)](http://cocoapods.org/pods/SwiftFSM)
