@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SwiftFSM_Example', :exclusive => true do
+  pod "SwiftFSM", :path => "../"
+end
+
+target 'SwiftFSM_Tests', :exclusive => true do
+  pod "SwiftFSM", :path => "../"
+
+  
+end
