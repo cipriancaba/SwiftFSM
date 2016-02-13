@@ -14,7 +14,7 @@ A solid yet simple fsm implementation in Swift
 - [x] Type-safety for States and Transitions using Generics
 - [x] Convenient state handling with closures for `onEnter` and `onExit`
 - [ ] Delegate implementation for a more generic state handling
-- [ ] Cocoapods and Carthage support
+- [ ] CocoaPods and Carthage support
 
 ## Requirements
 
