@@ -26,15 +26,7 @@ A solid yet simple fsm implementation in Swift
 
 ### CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
-
-CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
-To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate SwiftFSM into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 platform :ios, '8.0'
