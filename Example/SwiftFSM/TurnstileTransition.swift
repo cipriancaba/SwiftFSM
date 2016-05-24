@@ -13,7 +13,7 @@ enum TurnstileTransition: String {
   case Coin = "Coin"
 }
 
-extension TurnstileTransition: Printable {
+extension TurnstileTransition: CustomStringConvertible {
   var description: String {
     get {
       switch self {

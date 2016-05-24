@@ -57,11 +57,11 @@ class ViewController: UIViewController {
   
   func append(message: String) {
     stateTextView.text = "\(self.stateTextView.text)\n\(message)"
-    stateTextView.scrollRangeToVisible(NSMakeRange(count(stateTextView.text), 1))
+    stateTextView.scrollRangeToVisible(NSMakeRange(stateTextView.text.characters.count - 1, 1))
   }
   
   @IBAction func onCoin(sender: AnyObject) {
-    if let newState = fsm.transitionWith(.Coin) {
+    if let _ = fsm.transitionWith(.Coin) {
       // state change happened
     } else {
       // transition was not valid

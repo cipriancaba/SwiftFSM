@@ -107,7 +107,7 @@ public class SwiftFSM<State: Hashable, Transition: Hashable> {
   
   private func log(message: String) {
     if _willLog {
-      println("\(_id) \(message)")
+      print("\(_id) \(message)")
     }
   }
 }
