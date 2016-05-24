@@ -13,7 +13,7 @@ enum TurnstileState: String {
   case Unlocked = "Unlocked"
 }
 
-extension TurnstileState: Printable {
+extension TurnstileState: CustomStringConvertible {
   var description: String {
     get {
       switch self {

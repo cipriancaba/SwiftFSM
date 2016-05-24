@@ -32,7 +32,7 @@ class Tests: XCTestCase {
     let unlocked = fsm.addState(.Unlocked)
     
     unlocked.onEnter = { (transition: TurnstileTransition) -> Void in
-      XCTAssertEqual(transition, .Coin, "Fsm did not entered the unlocked state with the .Coin transition")
+      XCTAssertEqual(transition, TurnstileTransition.Coin, "Fsm did not entered the unlocked state with the .Coin transition")
       expectationUnlockedEntered.fulfill()
     }
     
@@ -40,7 +40,7 @@ class Tests: XCTestCase {
     
     waitForExpectationsWithTimeout(3, handler: { (error) -> Void in
       if let error = error {
-        println("Error: \(error.localizedDescription)")
+        print("Error: \(error.localizedDescription)")
       }
     })
   }
@@ -50,7 +50,7 @@ class Tests: XCTestCase {
     
     let unlocked = fsm.addState(.Unlocked)
     unlocked.onExit = { (transition: TurnstileTransition) -> Void in
-      XCTAssertEqual(transition, .Push, "Fsm did not exited the unlocked state with the .Push transition")
+      XCTAssertEqual(transition, TurnstileTransition.Push, "Fsm did not exited the unlocked state with the .Push transition")
       expectationUnlockedExited.fulfill()
     }
     
@@ -62,7 +62,7 @@ class Tests: XCTestCase {
     
     waitForExpectationsWithTimeout(3, handler: { (error) -> Void in
       if let error = error {
-        println("Error: \(error.localizedDescription)")
+        print("Error: \(error.localizedDescription)")
       }
     })
   }
@@ -71,7 +71,7 @@ class Tests: XCTestCase {
     // This needs to transition to unlocked
     if let newState = fsm.transitionWith(.Coin) {
       XCTAssertEqual(fsm.currentState, newState, "Fsm currentState is not the same with the returned state")
-      XCTAssertEqual(fsm.currentState, .Unlocked, "Fsm did not transition to unlocked")
+      XCTAssertEqual(fsm.currentState, TurnstileState.Unlocked, "Fsm did not transition to unlocked")
     } else {
       XCTFail("Fsm has not transitioned at all")
     }
