@@ -49,7 +49,7 @@ $ pod install
 
 ### Manually
 
-If you prefer not to use either of the aforementioned dependency managers, you can integrate SwiftFSM into your project manually by simply copying [SwiftFSM.swift](https://github.com/cipriancaba/SwiftFSM/blob/master/Pod/Classes/SwiftFSM.swift) into your project
+If you prefer not to use either of the aforementioned dependency managers, you can integrate SwiftFSM into your project manually by simply copying [SwiftFSM.swift](https://github.com/cipriancaba/SwiftFSM/blob/master/Pod/Classes/SwiftFSM.swift) and [SwiftFSMState.swift](https://github.com/cipriancaba/SwiftFSM/blob/master/Pod/Classes/SwiftFSMState.swift) into your project
 
 ## Usage
 
