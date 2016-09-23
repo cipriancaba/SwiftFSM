@@ -11,14 +11,14 @@ import SwiftFSM
 
 class ViewController: UIViewController {
   
-  private let fsm = SwiftFSM<TurnstileState, TurnstileTransition>(id: "TurnstileFSM", willLog: false)
+  fileprivate let fsm = SwiftFSM<TurnstileState, TurnstileTransition>(id: "TurnstileFSM", willLog: false)
   
   @IBOutlet var stateTextView: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    stateTextView.editable = false
+    stateTextView.isEditable = false
     
     // add new states and get a reference to them so you can map handlers and define transitions
     let locked = fsm.addState(.Locked)
@@ -47,20 +47,23 @@ class ViewController: UIViewController {
     fsm.startFrom(.Locked)
   }
   
-  func handleUnlocked(transition: TurnstileTransition) {
+  func handleUnlocked(_ transition: TurnstileTransition) {
     append("Entered the \(self.fsm.currentState) state with the \(transition) transition")
   }
   
-  func handleUnlockedExit(transition: TurnstileTransition) {
+  func handleUnlockedExit(_ transition: TurnstileTransition) {
     append("Turnstile fsm exited the Unlocked state with the \(transition) transition")
   }
   
-  func append(message: String) {
-    stateTextView.text = "\(self.stateTextView.text)\n\(message)"
+  func append(_ message: String) {
+    guard let text = self.stateTextView.text else {
+        return
+    }
+    stateTextView.text = "\(text)\n\(message)"
     stateTextView.scrollRangeToVisible(NSMakeRange(stateTextView.text.characters.count - 1, 1))
   }
   
-  @IBAction func onCoin(sender: AnyObject) {
+  @IBAction func onCoin(_ sender: AnyObject) {
     if let _ = fsm.transitionWith(.Coin) {
       // state change happened
     } else {
@@ -68,7 +71,7 @@ class ViewController: UIViewController {
     }
   }
   
-  @IBAction func onPush(sender: AnyObject) {
+  @IBAction func onPush(_ sender: AnyObject) {
     fsm.transitionWith(.Push)
   }
 }
