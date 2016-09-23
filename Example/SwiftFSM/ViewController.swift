@@ -56,7 +56,10 @@ class ViewController: UIViewController {
   }
   
   func append(_ message: String) {
-    stateTextView.text = "\(self.stateTextView.text)\n\(message)"
+    guard let text = self.stateTextView.text else {
+        return
+    }
+    stateTextView.text = "\(text)\n\(message)"
     stateTextView.scrollRangeToVisible(NSMakeRange(stateTextView.text.characters.count - 1, 1))
   }
   
