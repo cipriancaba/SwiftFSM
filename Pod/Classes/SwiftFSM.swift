@@ -83,6 +83,7 @@ open class SwiftFSM<State: Hashable, Transition: Hashable> {
   
   :returns: This method will return the new state if the state transition was successful or nil otherwise
   */
+  @discardableResult
   open func transitionWith(_ transition: Transition) -> State? {
     if let oldState = _currentState {
       if let newState = oldState.transitionWith(transition) {
