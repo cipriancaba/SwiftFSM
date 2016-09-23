@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 /// A simple, enum based FSM implementation
-public class SwiftFSM<State: Hashable, Transition: Hashable> {
-  private let _id: String
-  private let _willLog: Bool
+open class SwiftFSM<State: Hashable, Transition: Hashable> {
+  fileprivate let _id: String
+  fileprivate let _willLog: Bool
   
-  private var _states = [State: SwiftFSMState<State, Transition>]()
-  private var _currentState: SwiftFSMState<State, Transition>?
+  fileprivate var _states = [State: SwiftFSMState<State, Transition>]()
+  fileprivate var _currentState: SwiftFSMState<State, Transition>?
   
   /// Returns the current state of the fsm
-  public var currentState: State {
+  open var currentState: State {
     get {
       return _currentState!.state
     }
@@ -46,7 +46,7 @@ public class SwiftFSM<State: Hashable, Transition: Hashable> {
   
   :returns: A SwiftFSMState instance for the newState
   */
-  public func addState(newState: State) -> SwiftFSMState<State, Transition> {
+  open func addState(_ newState: State) -> SwiftFSMState<State, Transition> {
     if let existingState = _states[newState] {
       log("State \(newState) already added")
       return existingState
@@ -64,7 +64,7 @@ public class SwiftFSM<State: Hashable, Transition: Hashable> {
   
   :param: state The initial state of the fsm
   */
-  public func startFrom(state: State) {
+  open func startFrom(_ state: State) {
     if _currentState == nil {
       if let fsmState = _states[state] {
         _currentState = fsmState
@@ -83,7 +83,7 @@ public class SwiftFSM<State: Hashable, Transition: Hashable> {
   
   :returns: This method will return the new state if the state transition was successful or nil otherwise
   */
-  public func transitionWith(transition: Transition) -> State? {
+  open func transitionWith(_ transition: Transition) -> State? {
     if let oldState = _currentState {
       if let newState = oldState.transitionWith(transition) {
         if let newFsmState = _states[newState] {
@@ -105,7 +105,7 @@ public class SwiftFSM<State: Hashable, Transition: Hashable> {
     return nil
   }
   
-  private func log(message: String) {
+  fileprivate func log(_ message: String) {
     if _willLog {
       print("\(_id) \(message)")
     }

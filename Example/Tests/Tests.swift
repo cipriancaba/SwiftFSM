@@ -27,7 +27,7 @@ class Tests: XCTestCase {
   }
   
   func testOnEnter() {
-    let expectationUnlockedEntered = expectationWithDescription("unlockedEntered")
+    let expectationUnlockedEntered = expectation(description: "unlockedEntered")
     
     let unlocked = fsm.addState(.Unlocked)
     
@@ -38,7 +38,7 @@ class Tests: XCTestCase {
     
     fsm.transitionWith(.Coin)
     
-    waitForExpectationsWithTimeout(3, handler: { (error) -> Void in
+    waitForExpectations(timeout: 3, handler: { (error) -> Void in
       if let error = error {
         print("Error: \(error.localizedDescription)")
       }
@@ -46,7 +46,7 @@ class Tests: XCTestCase {
   }
   
   func testOnExit() {
-    let expectationUnlockedExited = expectationWithDescription("unlockedExited")
+    let expectationUnlockedExited = expectation(description: "unlockedExited")
     
     let unlocked = fsm.addState(.Unlocked)
     unlocked.onExit = { (transition: TurnstileTransition) -> Void in
@@ -60,7 +60,7 @@ class Tests: XCTestCase {
     // And then transition back to locked so onExit is triggered
     fsm.transitionWith(.Push)
     
-    waitForExpectationsWithTimeout(3, handler: { (error) -> Void in
+    waitForExpectations(timeout: 3, handler: { (error) -> Void in
       if let error = error {
         print("Error: \(error.localizedDescription)")
       }

@@ -17,9 +17,9 @@ extension TurnstileState: CustomStringConvertible {
   var description: String {
     get {
       switch self {
-      case Locked:
+      case .Locked:
         return "Locked"
-      case Unlocked:
+      case .Unlocked:
         return "Unlocked"
       }
     }

@@ -17,9 +17,9 @@ extension TurnstileTransition: CustomStringConvertible {
   var description: String {
     get {
       switch self {
-      case Push:
+      case .Push:
         return "Push"
-      case Coin:
+      case .Coin:
         return "Coin"
       }
     }
